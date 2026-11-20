@@ -1,4 +1,4 @@
-# Interfaz para la investigación antropológica cualitativa
+# Desarrollo de una experiencia de usuario para orientar la formulación y el análisis en investigaciones antropológicas cualitativas para la Universidad del Valle de Guatemala
 
 **Proyecto de Graduación 2026 · Universidad del Valle de Guatemala**
 

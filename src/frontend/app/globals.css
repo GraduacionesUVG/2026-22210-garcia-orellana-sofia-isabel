@@ -1,0 +1,70 @@
+@import "tailwindcss" source(none);
+@import "../styles/responsive.css";
+@source "../app";
+@source "../components";
+@source "../features";
+
+                                  
+@theme {
+               
+  --color-primary: #238238;                           
+  --color-secondary: #4a148c;                          
+  --color-background-light: #f9f8f3;              
+  --color-surface-light: #ffffff;
+  --color-text-light: #333333;
+
+                                                        
+  --color-muted: #6b7280;                            
+  --color-border: #e5e7eb;                           
+                                                                          
+  --color-muted-label: #526782;
+  --color-slate-400: var(--color-muted-label);
+
+                   
+  --font-sans: "Roboto", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  --font-display: "Montserrat", ui-sans-serif, system-ui;
+}
+
+                                                        
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-light);
+  background: var(--color-background-light);
+}
+
+                                       
+@layer utilities {
+                                                                              
+  .text-slate-300,
+  .text-slate-500 {
+    color: var(--color-muted-label);
+  }
+  .text-red-500 {
+    color: var(--color-red-600);
+  }
+  .bg-pattern-dots {
+    background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 20px;
+}
+
+                                                                                    
+.hide-details-marker::-webkit-details-marker {
+  display: none;
+}

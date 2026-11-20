@@ -1,0 +1,124 @@
+                                                                         
+                                                                                
+   
+@media (width < 1024px) {
+  :where(.responsive-surface, .responsive-workspace, .responsive-auth) :where(h1, h2, h3, p, label, code) {
+    overflow-wrap: anywhere;
+  }
+
+  :where(.responsive-surface, .responsive-workspace, .responsive-auth) :where(input, select, textarea) {
+    min-width: 0;
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  :where(.responsive-surface, .responsive-workspace, .responsive-auth) :where(button, select, input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"])) {
+    min-height: 44px;
+  }
+
+  :where(.responsive-surface, .responsive-workspace) .grid > * { min-width: 0; }
+                                                                           
+                                                                            
+  :where(.responsive-surface, .responsive-workspace, .responsive-auth) .material-symbols-rounded {
+    display: inline-block; flex-shrink: 0; width: 1em; max-width: 1em; overflow: hidden; white-space: nowrap; vertical-align: middle;
+  }
+  .responsive-surface .app-shell { height: 100dvh; }
+  .responsive-surface .app-main { min-width: 0; padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+  .responsive-surface .app-content { padding: 20px 16px; }
+  .responsive-surface .dashboard-topbar { height: auto; min-height: 80px; flex-wrap: wrap; gap: 16px; padding: 20px 16px 12px; }
+  .responsive-surface .dashboard-topbar > div:first-child { flex-basis: 100%; min-width: 0; }
+  .responsive-surface .dashboard-topbar h1 { font-size: 24px; line-height: 1.2; }
+  .responsive-surface .dashboard-topbar-actions { width: 100%; gap: 12px; }
+  .responsive-surface .dashboard-search { display: block; flex: 1; min-width: 0; }
+  .responsive-surface .dashboard-search input { width: 100%; }
+  .responsive-surface .dashboard-topbar-actions > button { flex-shrink: 0; }
+  .responsive-surface .dashboard-stats { gap: 12px; margin-bottom: 28px; }
+
+  .responsive-surface .dashboard-sidebar { display: flex; position: fixed; inset: auto 0 0; z-index: 30; width: 100%; height: auto; flex-direction: row; align-items: stretch; padding: 4px 8px calc(4px + env(safe-area-inset-bottom, 0px)); }
+  .responsive-surface .dashboard-brand { display: none; }
+  .responsive-surface .dashboard-nav { display: flex; flex: 3; min-width: 0; gap: 4px; overflow: visible; padding: 0; }
+  .responsive-surface .dashboard-nav > a { flex: 1; min-width: 0; flex-direction: column; justify-content: center; gap: 2px; margin: 0; padding: 6px 2px; min-height: 60px; border: 0; }
+  .responsive-surface .dashboard-nav > a span:last-child { font-size: 11px; }
+  .responsive-surface .dashboard-account { display: flex; flex: 1; padding: 0; border: 0; min-width: 0; }
+  .responsive-surface .dashboard-account > a { flex-direction: column; justify-content: center; gap: 2px; padding: 4px; }
+  .responsive-surface .dashboard-account > a > div:first-child { height: 28px; width: 28px; flex-shrink: 0; }
+  .responsive-surface .dashboard-account-copy { display: none; }
+  .responsive-surface .dashboard-account-label { display: inline; font-size: 11px; font-weight: 500; }
+
+  .responsive-surface .profile-form-body { padding: 20px 16px; }
+  .responsive-surface .profile-actions { flex-direction: column-reverse; align-items: stretch; padding: 16px; }
+  .responsive-surface .profile-actions > div { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .responsive-surface .profile-actions button { padding-inline: 12px; }
+
+  .responsive-workspace { height: 100dvh; }
+  .responsive-workspace .workspace-main { padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)); }
+  .responsive-workspace .workspace-editor-body { padding: 20px 16px; }
+  .responsive-workspace .workspace-editor-heading { gap: 12px; flex-wrap: wrap; padding-inline: 16px; }
+  .responsive-workspace .workspace-editor-heading > div { min-width: 0; }
+  .responsive-workspace .workspace-editor-footer { flex-direction: column; align-items: stretch; gap: 16px; padding: 16px; }
+  .responsive-workspace .workspace-editor-footer > div { gap: 12px; flex-wrap: wrap; }
+  .responsive-workspace .workspace-editor-footer > button { justify-content: center; width: 100%; padding-inline: 16px; }
+  .responsive-workspace .workspace-editor-footer button { min-height: 44px; }
+  .responsive-workspace .corpus-filter-actions { flex-wrap: wrap; }
+  .responsive-workspace .corpus-filter-actions button { flex: 1; }
+  .responsive-workspace [data-field-key] > .flex.items-end { flex-wrap: wrap; align-items: start; }
+  .responsive-workspace [data-field-key] > .flex.items-end > :first-child { flex-basis: 100%; min-width: 0; }
+
+  .responsive-auth { min-height: 100dvh; overflow-y: auto; }
+  .responsive-auth > section { margin-block: 16px; }
+  .responsive-auth .auth-form-panel { padding: 28px 24px; }
+
+                                                                                
+  .responsive-workspace .assistant-sidebar-container { display: flex; position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 35; height: auto; max-width: calc(100vw - 32px); }
+  .responsive-workspace .assistant-sidebar-content { display: none; }
+  .responsive-workspace .assistant-sidebar-container[data-assistant-open="true"] { inset: 12px; z-index: 60; display: flex; flex-direction: column; max-width: none; height: auto; border: 1px solid var(--color-border); border-radius: 16px; background: white; box-shadow: 0 16px 60px rgb(15 23 42 / 20%); }
+  .responsive-workspace .assistant-sidebar-container[data-assistant-open="true"] .assistant-sidebar-content { display: flex; flex: 1; min-height: 0; flex-direction: column; overflow: auto; }
+  .responsive-workspace .assistant-panel { display: none; }
+  .responsive-workspace .assistant-panel[data-selected="true"] { display: flex; flex: 1; flex-direction: column; min-height: 0; }
+  .responsive-workspace .assistant-panel > aside { display: flex; width: 100%; max-width: 100%; flex: 1; min-height: 0; border-left: 0; }
+  .responsive-workspace .assistant-panel > aside > * { min-width: 0; }
+  .responsive-workspace .assistant-mobile-heading { flex-shrink: 0; }
+
+                                                                                  
+  :where(.responsive-surface, .responsive-workspace) .fixed.inset-0:has(> section) { padding: 12px; }
+  :where(.responsive-surface, .responsive-workspace) .fixed.inset-0 > section { max-height: calc(100dvh - 24px); min-width: 0; }
+  :where(.responsive-surface, .responsive-workspace) .fixed.inset-0 > section > .overflow-y-auto { min-height: 0; }
+  .responsive-surface .fixed.inset-0 > .relative { margin-top: 12px; max-height: calc(100dvh - 24px); overflow-y: auto; }
+}
+
+@media (width < 640px) {
+  .responsive-surface .dashboard-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .responsive-surface .dashboard-stats > :last-child { grid-column: 1 / -1; }
+  .responsive-surface .dashboard-stats > * { padding: 16px; }
+  .responsive-surface .dashboard-stats p.text-3xl { font-size: 24px; }
+  .responsive-auth { align-items: start; }
+}
+
+                                                                      
+                                                                              
+.analysis-code-evidence { container: code-evidence / inline-size; }
+
+@container code-evidence (width < 740px) {
+  .analysis-evidence-layout { grid-template-columns: minmax(0, 1fr); }
+  .analysis-evidence-list { display: flex; max-height: none; overflow-x: auto; padding-bottom: 4px; }
+  .analysis-evidence-list > button { flex: 0 0 210px; width: auto; margin-block: 0; }
+}
+
+@container code-evidence (width < 500px) {
+  .analysis-evidence-quotes { grid-template-columns: minmax(0, 1fr); }
+}
+
+                                                                        
+                                                                         
+@media (1024px <= width < 1536px) {
+  .responsive-workspace .grid > * { min-width: 0; }
+  .responsive-workspace :where(input, select, textarea) { min-width: 0; max-width: 100%; }
+  .responsive-workspace .workspace-editor-footer { flex-wrap: wrap; gap: 16px; }
+  .responsive-workspace .workspace-editor-footer > div { flex-basis: 100%; }
+  .responsive-workspace .workspace-editor-footer > button { max-width: 100%; }
+  .responsive-workspace [data-field-key] > .flex.items-end { flex-wrap: wrap; align-items: start; }
+  .responsive-workspace [data-field-key] > .flex.items-end > :first-child { flex-basis: 100%; min-width: 0; }
+  .responsive-workspace .material-symbols-rounded {
+    display: inline-block; flex-shrink: 0; width: 1em; max-width: 1em; overflow: hidden; white-space: nowrap; vertical-align: middle;
+  }
+}

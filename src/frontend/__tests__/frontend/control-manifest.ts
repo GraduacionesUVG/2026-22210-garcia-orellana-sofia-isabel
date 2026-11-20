@@ -1,0 +1,70 @@
+export interface UiControlContract {
+  id: string; route: string; source: string; roles: readonly string[]; states: readonly string[];
+  backendActionIds: readonly string[]; persistence: string; disposition: string;
+  label?: string; existingTest?: string;
+  routePattern?: string; role?: string; accessibleName?: string;
+  kind?: 'navigation' | 'mutation' | 'read' | 'disclosure' | 'clipboard' | 'download' | 'assistant'; critical?: boolean;
+}
+type Entry = readonly [id: string, route: string, source: string, accessibleName: string, kind: NonNullable<UiControlContract['kind']>, actions: readonly string[], roles?: readonly string[]];
+const declarations: readonly Entry[] = [
+  ['auth.login','/login','features/auth/components/login/LoginForm.jsx','Iniciar Sesión','mutation',['auth.login.submit'],['anonymous']],
+  ['auth.register','/register','features/auth/components/register/RegisterForm.jsx','Crear cuenta','mutation',['auth.register.submit'],['anonymous']],
+  ['auth.forgot-password','/forgot-password','features/auth/components/forgot-password/ForgotPasswordForm.jsx','Enviar enlace','mutation',['auth.forgot-password.submit'],['anonymous']],
+  ['auth.reset-password','/auth/reset','features/auth/components/reset/ResetPasswordForm.jsx','Actualizar contraseña','mutation',['auth.reset-password.submit'],['anonymous']],
+  ['profile.save','/profile','features/profile/components/ProfileActionsBar.jsx','Guardar cambios','mutation',['profile.me.update']],
+  ['profile.password.change','/profile','features/profile/components/ProfileSecuritySection.jsx','Cambiar contraseña','mutation',['profile.password.change']],
+  ['profile.logout','/profile','features/profile/components/ProfileActionsBar.jsx','Cerrar sesión','mutation',['profile.session.logout']],
+  ['project.create','/dashboard','features/projects/components/CreateProjectModal.jsx','Crear proyecto','mutation',['projects.modal-create']],
+  ['project.update','/dashboard','features/projects/components/EditProjectModal.jsx','Guardar cambios','mutation',['projects.project.update']],
+  ['project.delete','/dashboard','features/projects/components/DeleteProjectModal.jsx','Eliminar proyecto','mutation',['projects.project.delete']],
+  ['project.card.open','/dashboard','features/dashboard/components/ProjectCard.jsx','Abrir proyecto','navigation',[]],
+  ['navigation.dashboard.views','/dashboard','features/dashboard/components/Sidebar.jsx','Mis Proyectos / Compartidos / Reportes','navigation',[]],
+  ['navigation.workspace.drawer','/projects/:id/*','features/projects/workspace/components/ProjectWorkspaceLayout.jsx','Menú del proyecto','disclosure',[]],
+  ['navigation.workspace.drawer.close','/projects/:id/*','features/projects/workspace/components/ProjectWorkspaceLayout.jsx','Cerrar menú del proyecto','disclosure',[]],
+  ...['delimitation','research-design','sample-config','corpus','analysis/segments','analysis/codes','analysis','analysis/memos','analysis/insights','report','team'].map(destination => [`navigation.workspace.${destination.replaceAll('/','.')}`, '/projects/:id/*', 'features/projects/workspace/components/ProjectProgressSidebar.jsx', destination, 'navigation', []] as Entry),
+  ['delimitation.save','/projects/:id/delimitation','features/projects/delimitation/components/DelimitationEditorSection.jsx','Campos de delimitación (autosave)','mutation',['delimitation.session.save']],
+  ['delimitation.criteria.create','/projects/:id/delimitation','features/projects/delimitation/components/CriteriaEditor.jsx','Agregar criterio','mutation',['delimitation.criteria-item.create']],
+  ['delimitation.criteria.update','/projects/:id/delimitation','features/projects/delimitation/components/CriteriaEditor.jsx','Editar criterio','mutation',['delimitation.criteria-item.update']],
+  ['delimitation.criteria.delete','/projects/:id/delimitation','features/projects/delimitation/components/CriteriaEditor.jsx','Eliminar criterio','mutation',['delimitation.criteria-item.delete']],
+  ['delimitation.version.create','/projects/:id/delimitation','features/projects/delimitation/components/CreateVersionForm.jsx','Guardar versión','mutation',['delimitation.version.create']],
+  ['delimitation.version.restore','/projects/:id/delimitation','features/projects/delimitation/components/RestoreVersionDialog.jsx','Restaurar versión','mutation',['delimitation.version.restore']],
+  ['research-design.save','/projects/:id/research-design','features/projects/research-design/components/ResearchDesignEditorSection.jsx','Campos de diseño (autosave)','mutation',['research-design.session.save']],
+  ['research-design.objective.create','/projects/:id/research-design','features/projects/research-design/components/FieldSpecificObjectives.jsx','Agregar objetivo','mutation',['research-design.specific-objective.create']],
+  ['research-design.objective.update','/projects/:id/research-design','features/projects/research-design/components/FieldSpecificObjectives.jsx','Editar objetivo','mutation',['research-design.specific-objective.update']],
+  ['research-design.objective.delete','/projects/:id/research-design','features/projects/research-design/components/FieldSpecificObjectives.jsx','Eliminar objetivo','mutation',['research-design.specific-objective.delete']],
+  ['research-design.objective.reorder','/projects/:id/research-design','features/projects/research-design/components/FieldSpecificObjectives.jsx','Reordenar objetivos','mutation',['research-design.specific-objectives.reorder']],
+  ['research-design.version.create','/projects/:id/research-design','features/projects/workspace/components/VersionHistoryModal.jsx','Guardar versión','mutation',['research-design.version.create']],
+  ['research-design.version.restore','/projects/:id/research-design','features/projects/workspace/components/VersionHistoryModal.jsx','Restaurar versión','mutation',['research-design.version.restore']],
+  ['sample-config.save','/projects/:id/sample-config','features/projects/sample-config/components/SampleConfigEditorSection.jsx','Campos de muestra (autosave)','mutation',['sample-config.session.update']],
+  ['sample-config.version.create','/projects/:id/sample-config','features/projects/workspace/components/VersionHistoryModal.jsx','Guardar versión','mutation',['sample-config.version.create']],
+  ['sample-config.version.restore','/projects/:id/sample-config','features/projects/workspace/components/VersionHistoryModal.jsx','Restaurar versión','mutation',['sample-config.version.restore']],
+  ['corpus.document.create','/projects/:id/corpus/new','features/projects/corpus/components/CorpusNewDocumentSection.jsx','Guardar documento','mutation',['corpus.document.create']],
+  ['corpus.document.update','/projects/:id/corpus/:documentId','features/projects/corpus/components/CorpusDocumentEditorSection.jsx','Guardar documento','mutation',['corpus.document.update']],
+  ['corpus.document.delete','/projects/:id/corpus','features/projects/corpus/components/CorpusDocumentCard.jsx','Eliminar documento','mutation',['corpus.document.delete']],
+  ['corpus.document.duplicate','/projects/:id/corpus','features/projects/corpus/components/CorpusDocumentCard.jsx','Duplicar documento','mutation',['corpus.document.duplicate']],
+  ['corpus.document.restore','/projects/:id/corpus','features/projects/corpus/components/CorpusTrashModal.jsx','Restaurar documento','mutation',['corpus.document.restore']],
+  ['analysis.code.create','/projects/:id/analysis/codes','features/projects/analysis/components/AnalysisCodeFormModal.jsx','Crear código','mutation',['analysis.code.create']],
+  ['analysis.code.update','/projects/:id/analysis/codes','features/projects/analysis/components/AnalysisCodeFormModal.jsx','Guardar cambios','mutation',['analysis.code.update']],
+  ['analysis.code.delete','/projects/:id/analysis/codes','features/projects/analysis/components/AnalysisCodeCard.jsx','Eliminar código','mutation',['analysis.code.delete']],
+  ['analysis.memo.create','/projects/:id/analysis/memos','features/projects/analysis/components/AnalysisMemoFormModal.jsx','Crear memo','mutation',['analysis.memo.create']],
+  ['analysis.memo.update','/projects/:id/analysis/memos','features/projects/analysis/components/AnalysisMemoFormModal.jsx','Guardar cambios','mutation',['analysis.memo.update']],
+  ['analysis.memo.delete','/projects/:id/analysis/memos','features/projects/analysis/components/AnalysisMemoCard.jsx','Eliminar memo','mutation',['analysis.memo.delete']],
+  ['analysis.insight.create','/projects/:id/analysis/insights','features/projects/analysis/components/AnalysisInsightFormModal.jsx','Crear hallazgo','mutation',['analysis.insight.create']],
+  ['analysis.insight.update','/projects/:id/analysis/insights','features/projects/analysis/components/AnalysisInsightFormModal.jsx','Guardar cambios','mutation',['analysis.insight.update']],
+  ['analysis.insight.delete','/projects/:id/analysis/insights','features/projects/analysis/components/AnalysisInsightCard.jsx','Eliminar hallazgo','mutation',['analysis.insight.delete']],
+  ['team.member.invite','/projects/:id/team','features/projects/team/components/TeamSection.jsx','Invitar','mutation',['team.member.invite']],
+  ['team.member-role.update','/projects/:id/team','features/projects/team/components/TeamSection.jsx','Rol de miembro','mutation',['team.member-role.update']],
+  ['team.member.remove','/projects/:id/team','features/projects/team/components/TeamSection.jsx','Eliminar miembro','mutation',['team.member.remove']],
+  ['team.invitation.revoke','/projects/:id/team','features/projects/team/components/TeamSection.jsx','Revocar invitación','mutation',['team.invitation.revoke']],
+  ['team.invitation.copy','/projects/:id/team','features/projects/team/components/TeamSection.jsx','Copiar enlace','clipboard',[]],
+  ['team.invitation.accept','/project-invitations/accept','features/projects/team/components/InvitationAcceptSection.jsx','Aceptar invitación','mutation',['team.project-invitation.accept']],
+  ['report.refresh','/projects/:id/report','features/projects/report/components/ReportEditorSection.jsx','Actualizar','read',['workflow.project-workflow.read','analysis.dashboard.read','analysis.memos.list','analysis.insights.list']],
+];
+export const uiControlManifest: readonly UiControlContract[] = declarations.map(([id, route, source, accessibleName, kind, backendActionIds, roles = ['owner','editor','viewer']]) => ({
+  id, route, routePattern: route, source, accessibleName, kind, roles, role: roles.join('|'),
+  states: kind === 'mutation' ? ['success','validation','failure'] : ['success'], backendActionIds,
+  persistence: kind === 'mutation' ? 'live' : 'none', critical: true,
+  disposition: id.startsWith('auth.') ? 'improve-existing' : 'new-evidence-needed',
+  ...(id.startsWith('auth.') ? { existingTest: '__tests__/e2e/auth-ui.spec.ts' } : {}),
+}));
+export const controlManifestStatus = { complete: false, issues: ['AST candidates must be reconciled to exact DOM names, dynamic rows, permissions and declared controls; inventory is not closed.'] };

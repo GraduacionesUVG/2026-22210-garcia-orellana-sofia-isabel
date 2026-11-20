@@ -1,0 +1,65 @@
+{
+  "frontend-mocked:dashboard": {
+    "approvedBy": "user",
+    "approvedAt": "2026-10-26T23:34:15Z",
+    "approvalNote": "Synthetic screen content explicitly reviewed and approved by the user; each platform keeps its own raster baseline because fallback fonts differ.",
+    "platforms": {
+      "darwin": { "capture": "Chromium 1.58.2, mocked data, 1440x900; captured on macOS with local font surrogate.", "sha256": "8cc39aa1ae936eadceff2f61a3f3143e6938bdbd21cbfd601dd3d435c9f0e90b" },
+      "linux": { "capture": "Chromium 1.58.2 in pinned Playwright Linux image, mocked data, 1440x900; same user-approved screen content with Linux fallback fonts.", "sha256": "50dcb0cea3598925cc7d3664a7e3a5ea1ddbbf42579636c7ed1eeeb6fd25201a" }
+    }
+  },
+  "frontend-mocked:document": {
+    "approvedBy": "user",
+    "approvedAt": "2026-10-26T23:34:15Z",
+    "approvalNote": "Synthetic screen content explicitly reviewed and approved by the user; each platform keeps its own raster baseline because fallback fonts differ.",
+    "platforms": {
+      "darwin": { "capture": "Chromium 1.58.2, mocked data, 1440x900; captured on macOS with local font surrogate.", "sha256": "985866c906f34d84a1fb363993e8abfb5960524b2becfcbe317b2484de95e75e" },
+      "linux": { "capture": "Chromium 1.58.2 in pinned Playwright Linux image, mocked data, 1440x900; same user-approved screen content with Linux fallback fonts.", "sha256": "23ca7fca74ac027f3ac03ea19e41f87f70e77fe371885671861dd0a4121688a1" }
+    }
+  },
+  "frontend-mocked:queue": {
+    "approvedBy": "user",
+    "approvedAt": "2026-10-26T23:34:15Z",
+    "approvalNote": "Synthetic screen content explicitly reviewed and approved by the user; each platform keeps its own raster baseline because fallback fonts differ.",
+    "platforms": {
+      "darwin": { "capture": "Chromium 1.58.2, mocked data, 1440x900; captured on macOS with local font surrogate.", "sha256": "b90f4cf8044ca61d10c9b89f2679c8b07dd6c16608ca1e0a96f01ba05f75421b" },
+      "linux": { "capture": "Chromium 1.58.2 in pinned Playwright Linux image, mocked data, 1440x900; same user-approved screen content with Linux fallback fonts.", "sha256": "ce7bfe95b295f8158a1d7d29fc1da66aa066a2c5b04244e0e9b8cc0d4075a1be" }
+    }
+  },
+  "frontend-mocked:codebook": {
+    "approvedBy": "user",
+    "approvedAt": "2026-10-26T23:34:15Z",
+    "approvalNote": "Synthetic screen content explicitly reviewed and approved by the user; each platform keeps its own raster baseline because fallback fonts differ.",
+    "platforms": {
+      "darwin": { "capture": "Chromium 1.58.2, mocked data, 1440x900; captured on macOS with local font surrogate.", "sha256": "d45e965ec645adae8e628b55da46875a9dd120b91c47635978e9aa037938b4c4" },
+      "linux": { "capture": "Chromium 1.58.2 in pinned Playwright Linux image, mocked data, 1440x900; same user-approved screen content with Linux fallback fonts.", "sha256": "5a074bea3fcfa0527d47191e0898d25359487291f11d92720ed247af1b65190b" }
+    }
+  },
+  "frontend-mocked:memos": {
+    "approvedBy": "user",
+    "approvedAt": "2026-10-26T23:34:15Z",
+    "approvalNote": "Synthetic screen content explicitly reviewed and approved by the user; each platform keeps its own raster baseline because fallback fonts differ.",
+    "platforms": {
+      "darwin": { "capture": "Chromium 1.58.2, mocked data, 1440x900; captured on macOS with local font surrogate.", "sha256": "7e1cbe0977ccc46170bfbfec3fee5a7a546d3ef2246f8c44624cfa2b54506243" },
+      "linux": { "capture": "Chromium 1.58.2 in pinned Playwright Linux image, mocked data, 1440x900; same user-approved screen content with Linux fallback fonts.", "sha256": "96c1bfeed4ea7d6d035db7341d7dbb1e4067e0196bd9b2f68715636a47c996eb" }
+    }
+  },
+  "frontend-mocked:insights": {
+    "approvedBy": "user",
+    "approvedAt": "2026-10-26T23:34:15Z",
+    "approvalNote": "Synthetic screen content explicitly reviewed and approved by the user; each platform keeps its own raster baseline because fallback fonts differ.",
+    "platforms": {
+      "darwin": { "capture": "Chromium 1.58.2, mocked data, 1440x900; captured on macOS with local font surrogate.", "sha256": "b91c4deb05c74dd561f93bc813393c24bd5cbc65157949dda33f123f6226607f" },
+      "linux": { "capture": "Chromium 1.58.2 in pinned Playwright Linux image, mocked data, 1440x900; same user-approved screen content with Linux fallback fonts.", "sha256": "c1116e8a023cf290abfb7682c1ab1f2b55913beee101d1196eb1f7016a365c94" }
+    }
+  },
+  "frontend-mocked:report": {
+    "approvedBy": "user",
+    "approvedAt": "2026-10-26T23:34:15Z",
+    "approvalNote": "Synthetic screen content explicitly reviewed and approved by the user; each platform keeps its own raster baseline because fallback fonts differ.",
+    "platforms": {
+      "darwin": { "capture": "Chromium 1.58.2, mocked data, 1440x900; captured on macOS with local font surrogate.", "sha256": "3b4fc2258fac398cb6e49ee716e93399ca9e9cf80a33fd22c3dbd1c6762ef957" },
+      "linux": { "capture": "Chromium 1.58.2 in pinned Playwright Linux image, mocked data, 1440x900; same user-approved screen content with Linux fallback fonts.", "sha256": "1f1b84b5a6d1f8735a1340e6bee1f40d5cd30ede1cb0895f9fc22e22d2ee4604" }
+    }
+  }
+}
